@@ -14,22 +14,20 @@ import { Component } from '@angular/core';
         <li *ngFor="let hobby of hobbies">{{hobby}}</li>
       </ul>
   </div>
+  <hr />
+  <h3>Edit User Information</h3>
   <form>
     <label>Name: </label><br />
     <!--ngModel binds the name property to the input-->
     <input type="text" name="name" [(ngModel)]="name"/><br />
-    <label>Name: </label><br />
-    <!--ngModel binds the name property to the input-->
-    <input type="text" name="name" [(ngModel)]="name"/><br />
-    <label>Name: </label><br />
-    <!--ngModel binds the name property to the input-->
-    <input type="text" name="name" [(ngModel)]="name"/><br />
-    <label>Name: </label><br />
-    <!--ngModel binds the name property to the input-->
-    <input type="text" name="name" [(ngModel)]="name"/><br />
-    <label>Name: </label><br />
-    <!--ngModel binds the name property to the input-->
-    <input type="text" name="name" [(ngModel)]="name"/><br />
+    <label>Email: </label><br />
+    <input type="text" name="email" [(ngModel)]="email"/><br />
+    <label>Street: </label><br />
+    <input type="text" name="address.street" [(ngModel)]="address.street"/><br />
+    <label>City: </label><br />
+    <input type="text" name="address.city" [(ngModel)]="address.city"/><br />
+    <label>State: </label><br />
+    <input type="text" name="address.state" [(ngModel)]="address.state"/><br />
   </form>`,
 })
 
