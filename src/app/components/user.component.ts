@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
   </h1>
   <p><strong>Email:</strong> {{email}}</p>
   <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>
+  <div *ngIf = "showHobbies">
   <h3>Hobbies</h3>
   <ul>
     <li *ngFor="let hobby of hobbies">{{hobby}}</li>
-  </ul>`,
+  </ul>
+  </div>`,
 })
 export class UserComponent  {
   //property variables
@@ -18,6 +20,7 @@ export class UserComponent  {
   email: string;
   address: address; // for object type define an interface. here address interface is defined
   hobbies: string[];
+  showHobbies: boolean;
 
   //This runs every time the component is rendered
   constructor() {
@@ -29,6 +32,7 @@ export class UserComponent  {
       state: 'MA'
     }
     this.hobbies = ['Music', 'Movies', 'Sports'];
+    this.showHobbies = false;
   }
 }
 
