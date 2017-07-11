@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'user',
   template: `<h1>
-    Hello {{name}}
+    {{name}}
   </h1>
   <p><strong>Email:</strong> {{email}}</p>
   <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>
@@ -13,7 +13,24 @@ import { Component } from '@angular/core';
       <ul>
         <li *ngFor="let hobby of hobbies">{{hobby}}</li>
       </ul>
-  </div>`,
+  </div>
+  <form>
+    <label>Name: </label><br />
+    <!--ngModel binds the name property to the input-->
+    <input type="text" name="name" [(ngModel)]="name"/><br />
+    <label>Name: </label><br />
+    <!--ngModel binds the name property to the input-->
+    <input type="text" name="name" [(ngModel)]="name"/><br />
+    <label>Name: </label><br />
+    <!--ngModel binds the name property to the input-->
+    <input type="text" name="name" [(ngModel)]="name"/><br />
+    <label>Name: </label><br />
+    <!--ngModel binds the name property to the input-->
+    <input type="text" name="name" [(ngModel)]="name"/><br />
+    <label>Name: </label><br />
+    <!--ngModel binds the name property to the input-->
+    <input type="text" name="name" [(ngModel)]="name"/><br />
+  </form>`,
 })
 
 export class UserComponent  {
