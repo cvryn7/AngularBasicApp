@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
     Hello {{name}}
   </h1>
   <p><strong>Email:</strong> {{email}}</p>
-  <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>`,
+  <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>
+  <h3>Hobbies</h3>
+  <ul>
+    <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+  </ul>`,
 })
 export class UserComponent  {
   //property variables
   name: string; // it is good practice to use typing, here typing is string
   email: string;
   address: address; // for object type define an interface. here address interface is defined
+  hobbies: string[];
 
   //This runs every time the component is rendered
   constructor() {
@@ -23,6 +28,7 @@ export class UserComponent  {
       city: 'Boston',
       state: 'MA'
     }
+    this.hobbies = ['Music', 'Movies', 'Sports'];
   }
 }
 
