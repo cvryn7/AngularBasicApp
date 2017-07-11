@@ -9,11 +9,25 @@ import { Component } from '@angular/core';
   <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>`,
 })
 export class UserComponent  {
-  name = 'Angular';
-  email = 'xyz@gmail.com'
-  address = {
-    street: '12 Main st',
-    city: 'Boston',
-    state: 'MA'
+  //property variables
+  name: string; // it is good practice to use typing, here typing is string
+  email: string;
+  address: address; // for object type define an interface. here address interface is defined
+
+  //This runs every time the component is rendered
+  constructor() {
+    this.name = 'Angular';
+    this.email = 'xyz@gmail.com';
+    this.address = {
+      street: '12 Main st',
+      city: 'Boston',
+      state: 'MA'
+    }
   }
+}
+
+interface address {
+  street: string;
+  city: string;
+  state: string;
 }
