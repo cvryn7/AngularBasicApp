@@ -4,10 +4,16 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `<h1>
     Hello {{name}}
-    <p>Email: {{email}}</p>
-  </h1>`,
+  </h1>
+    <p><strong>Email:</strong> {{email}}</p>
+  <p><strong>Address:</strong> {{address.street}} {{address.city}} {{address.state}}</p>`,
 })
 export class AppComponent  {
   name = 'Angular';
   email = 'xyz@gmail.com'
+  address = {
+    street: '12 Main st',
+    city: 'Boston',
+    state: 'MA'
+  }
 }
