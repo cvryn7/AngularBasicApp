@@ -36,8 +36,13 @@ import {PostsService} from '../services/posts.service';
     <input type="text" name="address.city" [(ngModel)]="address.city"/><br />
     <label>State: </label><br />
     <input type="text" name="address.state" [(ngModel)]="address.state"/><br />
-  </form>`,
-
+  </form>
+  <hr />
+  <h3>Posts</h3>
+  <div *ngFor="let post of posts">
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+  </div>`,
   providers: [PostsService]
 })
 
@@ -48,9 +53,11 @@ export class UserComponent  {
   address: address; // for object type define an interface. here address interface is defined
   hobbies: string[];
   showHobbies: boolean;
+  posts: Post[]; // Post interface is defined after the address interface
 
   //This runs every time the component is rendered
-  constructor() {
+  //Inject the post service to constructor by having a post service parameter
+  constructor(private postsService: PostsService) {
     this.name = 'Angular';
     this.email = 'xyz@gmail.com';
     this.address = {
@@ -60,6 +67,11 @@ export class UserComponent  {
     }
     this.hobbies = ['Music', 'Movies', 'Sports'];
     this.showHobbies = false;
+
+    //Since this returns an observable, we need to subscribe to it.
+    this.postsService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
   }
 
   toggleHobbies() {
@@ -84,4 +96,10 @@ interface address {
   street: string;
   city: string;
   state: string;
+}
+
+interface Post {
+  id: number;
+  title: string;
+  body: string;
 }

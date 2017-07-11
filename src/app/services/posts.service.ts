@@ -7,4 +7,10 @@ export class PostsService {
   constructor(private http: Http) {
     console.log('PostsService Initialized...');
   }
+
+  getPosts() {
+    //map is used to return an observable
+    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+      .map(res => res.json());
+  }
 }
