@@ -5,6 +5,6 @@ I followed this youtube video for building this app : https://www.youtube.com/wa
 To run the app locally:
 <ul>
 <li>clone the repository</li>
-<li>once in the root home use:<code> npm install </code></li>
+<li>once in the root of project run:<code> npm install </code></li>
 <li><code>npm start</code></li>
 </ul>
